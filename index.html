@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ru" data-theme="north">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>mebiolsonik26 — Discord-боты и автоматизация</title>
+<meta name="description" content="Создаю Discord-ботов на заказ, автоматизирую задачи и разрабатываю собственные цифровые проекты.">
+<meta name="theme-color" content="#030812">
+<meta property="og:type" content="website">
+<meta property="og:title" content="mebiolsonik26 — Discord-боты и автоматизация">
+<meta property="og:description" content="Разработка. Автоматизация. Цифровые проекты. Портфолио, услуги и плеер NORTH MUSIC.">
+<meta property="og:image" content="https://legusiano.github.io/mebiolsonik26/assets/img/og.png">
+<meta property="og:url" content="https://legusiano.github.io/mebiolsonik26/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Unbounded:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Перейти к содержимому</a>
+<div class="loader" aria-hidden="true"><span class="logo-mark">m26</span></div>
+<div class="progress" aria-hidden="true"><i id="progress"></i></div>
+
+<div class="sky" aria-hidden="true">
+  <div class="aurora a1"></div><div class="aurora a2"></div><div class="aurora a3"></div>
+  <canvas id="stars"></canvas>
+</div>
+<div class="glow" id="glow" aria-hidden="true"></div>
+
+<header class="top">
+  <a class="brand" href="#hero" aria-label="mebiolsonik26 — наверх"><span class="logo-mark">m26</span><span class="brand-text">mebiolsonik26</span></a>
+  <nav class="nav" id="nav" aria-label="Разделы">
+    <a href="#about">Обо мне</a><a href="#works">Работы</a><a href="#music">Музыка</a><a href="#updates">Новости</a><a href="#contact">Контакты</a>
+  </nav>
+  <div class="top-actions">
+    <button class="icon-btn" id="theme" type="button" aria-label="Сменить оформление: полярная ночь" title="Полярная ночь">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <button class="icon-btn menu-btn" id="menu" type="button" aria-label="Меню" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="hero">
+    <p class="eyebrow"><span id="typing" aria-hidden="true"></span><span class="sr-only" id="typing-static"></span></p>
+    <h1 class="hero-title" id="hero-title">ME BIOLSONIK26</h1>
+    <p class="hero-sub" id="hero-sub"></p>
+    <p class="hero-text" id="hero-text"></p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#works">Мои работы</a>
+      <a class="btn" data-tg href="https://t.me/ZloOi72" target="_blank" rel="noopener">Заказать бота</a>
+      <a class="btn ghost" href="#contact">Связаться со мной</a>
+    </div>
+    <a class="scroll-hint" href="#about" aria-label="Листать вниз"><span></span></a>
+  </section>
+
+  <section class="section" id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <h2 class="h2 reveal" id="about-h"><span>01</span>Обо мне</h2>
+      <div class="about-grid">
+        <div class="glass about-text reveal" id="about-text"></div>
+        <div class="glass learning reveal">
+          <h3>Что я сейчас изучаю</h3>
+          <ul id="learning" class="dots"></ul>
+        </div>
+      </div>
+      <div class="cards services" id="services"></div>
+      <p class="note reveal" id="services-note"></p>
+    </div>
+  </section>
+
+  <section class="section" id="works" aria-labelledby="works-h">
+    <div class="wrap">
+      <h2 class="h2 reveal" id="works-h"><span>02</span>Мои работы</h2>
+      <div class="chips" id="work-filters" role="group" aria-label="Фильтр проектов"></div>
+      <div class="cards projects" id="projects"></div>
+      <div class="glass soon" id="soon" hidden>
+        <h3>Новые проекты скоро</h3>
+        <p>Здесь появятся работы, как только они будут готовы к показу.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section promo-wrap" id="promo" aria-labelledby="promo-h" hidden>
+    <div class="wrap">
+      <div class="promo reveal">
+        <div>
+          <h2 id="promo-h"></h2>
+          <p id="promo-text"></p>
+        </div>
+        <a class="btn primary" data-tg id="promo-btn" href="https://t.me/ZloOi72" target="_blank" rel="noopener"></a>
+      </div>
+      <a class="banner" id="banner" hidden target="_blank" rel="noopener sponsored"><img alt="" loading="lazy"></a>
+    </div>
+  </section>
+
+  <section class="section" id="music" aria-labelledby="music-h">
+    <div class="wrap">
+      <h2 class="h2 reveal" id="music-h"><span>03</span>North Music Player</h2>
+      <div class="player glass reveal">
+        <div class="stage">
+          <div class="screen" id="screen">
+            <div class="screen-cover" id="screen-cover">
+              <img id="cover" alt="" hidden>
+              <div class="screen-msg" id="screen-msg">
+                <b>Плеер выключен</b>
+                <span>Нажми Play — подключится официальный плеер YouTube. Сам по себе звук не включится.</span>
+              </div>
+            </div>
+            <div id="yt"></div>
+          </div>
+          <div class="now">
+            <div class="now-text"><b id="now-title">Выбери трек</b><span id="now-artist">—</span></div>
+            <button class="icon-btn fav" id="now-fav" type="button" aria-label="В избранное" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>
+            </button>
+          </div>
+          <div class="seek">
+            <span id="t-cur">0:00</span>
+            <input type="range" id="seek" min="0" max="1000" value="0" step="1" aria-label="Перемотка" disabled>
+            <span id="t-dur">0:00</span>
+          </div>
+          <div class="controls">
+            <button class="icon-btn" id="prev" type="button" aria-label="Предыдущий трек"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14M19 6l-9 6 9 6z"/></svg></button>
+            <button class="play" id="play" type="button" aria-label="Играть"><svg viewBox="0 0 24 24" aria-hidden="true" id="play-ico"><path d="M8 5l11 7-11 7z"/></svg></button>
+            <button class="icon-btn" id="next" type="button" aria-label="Следующий трек"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 5v14M5 6l9 6-9 6z"/></svg></button>
+          </div>
+          <div class="volume">
+            <button class="icon-btn" id="mute" type="button" aria-label="Выключить звук" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" id="mute-ico"><path d="M4 9h4l5-4v14l-5-4H4zM16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg></button>
+            <input type="range" id="vol" min="0" max="100" value="70" aria-label="Громкость">
+          </div>
+          <p class="player-note" id="player-note">Громкость, перемотка и время работают через официальный YouTube IFrame API. На iPhone и iPad громкость меняется только кнопками телефона — это ограничение iOS.</p>
+        </div>
+        <div class="library">
+          <div class="lib-tools">
+            <label class="search"><span class="sr-only">Поиск по названию и исполнителю</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>
+              <input type="search" id="q" placeholder="Поиск: трек или исполнитель" autocomplete="off">
+            </label>
+            <div class="chips small" id="track-filters" role="group" aria-label="Фильтр треков"></div>
+          </div>
+          <p class="lib-count" id="lib-count" aria-live="polite"></p>
+          <ol class="tracks" id="tracks"></ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="updates" aria-labelledby="updates-h">
+    <div class="wrap">
+      <h2 class="h2 reveal" id="updates-h"><span>04</span>Обновления</h2>
+      <ol class="timeline" id="timeline"></ol>
+    </div>
+  </section>
+
+  <section class="section" id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 class="h2 reveal" id="contact-h"><span>05</span>Связаться со мной</h2>
+      <div class="contact-grid">
+        <div class="glass contact-main reveal">
+          <p class="muted">Основной контакт</p>
+          <p class="tg-handle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/></svg><span id="tg-handle">@ZloOi72</span></p>
+          <div class="row">
+            <a class="btn primary" data-tg href="https://t.me/ZloOi72" target="_blank" rel="noopener">Написать в Telegram</a>
+            <button class="btn ghost" id="copy-tg" type="button">Скопировать контакт</button>
+          </div>
+          <p class="copied" id="copied" role="status" aria-live="polite"></p>
+        </div>
+        <div class="glass reveal" id="idea">
+          <h3 id="idea-h"></h3>
+          <p id="idea-text"></p>
+          <a class="btn" data-tg href="https://t.me/ZloOi72" target="_blank" rel="noopener">Рассказать идею</a>
+        </div>
+      </div>
+      <div class="links" id="links"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span class="logo-mark">m26</span>
+  <p>© <span id="year">2026</span> mebiolsonik26 · Сделано под северным сиянием</p>
+</footer>
+
+<a class="order-float" data-tg id="order-float" href="https://t.me/ZloOi72" target="_blank" rel="noopener" hidden>Заказать бота</a>
+<button class="to-top" id="to-top" type="button" aria-label="Наверх"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l6-6 6 6"/></svg></button>
+
+<noscript><p class="noscript">Для портфолио и плеера нужен JavaScript. Связаться можно в Telegram: <a href="https://t.me/ZloOi72">@ZloOi72</a></p></noscript>
+
+<script src="data/site.js"></script>
+<script src="data/projects.js"></script>
+<script src="data/tracks.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/player.js"></script>
+</body>
+</html>
