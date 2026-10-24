@@ -17,7 +17,7 @@
     var m = /(?:youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/)|youtu\.be\/)([\w-]{11})/.exec(url || "");
     return m ? m[1] : "";
   }
-  function playable(t) { return t && ((t.source_type === "youtube" && t.yt) || (t.source_type === "audio" && t.source_url)); }
+  function playable(t) { return t && ((t.source_type === "youtube" && t.yt && t.embed !== false) || (t.source_type === "audio" && t.source_url)); }
   function fmt(s) { s = Math.max(0, Math.floor(s || 0)); return Math.floor(s / 60) + ":" + ("0" + s % 60).slice(-2); }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function fill(r) { r.style.setProperty("--p", (r.value - r.min) / (r.max - r.min) * 100 + "%"); }
@@ -32,7 +32,8 @@
     li.appendChild(el("span", "n", t.i + 1));
     var pick = el("button", "pick"); pick.type = "button";
     pick.disabled = !playable(t);
-    pick.setAttribute("aria-label", (playable(t) ? "Играть: " : "Недоступно: ") + t.title + " — " + t.artist);
+    var outside = t.source_type === "youtube" && t.yt && t.embed === false;  // владелец запретил встраивание
+    pick.setAttribute("aria-label", (playable(t) ? "Играть: " : outside ? "Только на YouTube: " : "Недоступно: ") + t.title + " — " + t.artist);
     var mini = el("img", "mini"); mini.alt = ""; mini.loading = "lazy"; mini.decoding = "async";
     if (t.cover) { mini.src = t.cover; mini.onerror = function () { mini.removeAttribute("src"); }; }
     pick.appendChild(mini);
@@ -46,6 +47,12 @@
     f.setAttribute("aria-label", "В избранное: " + t.title);
     f.onclick = function () { toggleFav(t.i); };
     li.appendChild(f);
+    if (outside) {
+      var a = el("a", "ext", "YouTube ↗"); a.href = t.source_url; a.target = "_blank"; a.rel = "noopener";
+      a.setAttribute("aria-label", "Открыть на YouTube: " + t.title);
+      li.insertBefore(a, f);
+      li.classList.add("outside");
+    }
     li.title = t.license_or_source_note || "";
     list.appendChild(li);
     rows.push({ li: li, fav: f });
@@ -70,7 +77,8 @@
     TR.forEach(function (t) { var v = visible(t); rows[t.i].li.hidden = !v; if (v) n++; });
     var ok = TR.filter(playable).length;
     $("lib-count").textContent = (n === TR.length ? "" : "Найдено: " + n + " из " + TR.length + " · ") +
-      "Всего позиций: " + TR.length + ", с проверенным источником: " + ok;
+      "Позиций: " + TR.length + " · играют на сайте: " + ok + " · только на YouTube: " +
+      TR.filter(function (t) { return t.embed === false; }).length;
   }
   function paintFavs() {
     TR.forEach(function (t) { rows[t.i].fav.setAttribute("aria-pressed", favs.indexOf(t.i) >= 0); });
