@@ -46,7 +46,7 @@
   document.addEventListener("touchend", function (e) {
     if (sx === null) return;
     var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
-    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5 && !e.target.closest(".catalog")) show(cur + (dx < 0 ? 1 : -1));
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) show(cur + (dx < 0 ? 1 : -1));
     sx = null;
   }, { passive: true });
 
@@ -77,65 +77,6 @@
   function toggleMenu(open) { menu.hidden = !open; $("menu-btn").setAttribute("aria-expanded", open); }
   $("menu-btn").onclick = function () { toggleMenu(menu.hidden); };
   document.addEventListener("click", function (e) { if (!menu.hidden && !menu.contains(e.target) && e.target !== $("menu-btn")) toggleMenu(false); });
-
-  /* ---------- архитектура ---------- */
-  document.querySelectorAll("#arch .node").forEach(function (n) {
-    n.onclick = function () {
-      document.querySelectorAll("#arch .node").forEach(function (x) { x.classList.toggle("on", x === n); });
-      $("arch-info").textContent = n.dataset.info;
-    };
-  });
-
-  /* ---------- каталог команд ---------- */
-  var CMDS = window.LANI_COMMANDS || [];
-  var COLORS = { "Плеер": "#A78BFA", "Поиск": "#C4B5FD", "Очередь": "#DDD6FE", "Плейлисты": "#F0ABFC", "Текстом": "#86EFAC" };
-  var cats = Object.keys(COLORS).filter(function (c) { return CMDS.some(function (x) { return x.cat === c; }); });
-  var filter = "Все", query = "";
-  cats.forEach(function (c) {
-    var n = CMDS.filter(function (x) { return x.cat === c; }).length;
-    var b = el("button", "catcard"); b.type = "button"; b.style.setProperty("--acc", COLORS[c]);
-    b.appendChild(el("b", null, n)); b.appendChild(document.createTextNode(c));
-    b.onclick = function () { setFilter(c); show(slides.indexOf(document.querySelector(".catalog-slide"))); };
-    if ($("catgrid")) $("catgrid").appendChild(b);
-  });
-  ["Все"].concat(cats).forEach(function (c) {
-    var b = el("button", "chip", c); b.type = "button"; b.dataset.c = c;
-    b.onclick = function () { setFilter(c); };
-    $("chips").appendChild(b);
-  });
-  function setFilter(c) {
-    filter = c;
-    [].forEach.call($("chips").children, function (b) { b.setAttribute("aria-pressed", b.dataset.c === c); });
-    render();
-  }
-  $("q").addEventListener("input", function () { query = this.value.trim().toLowerCase(); render(); });
-  function render() {
-    var box = $("catalog"); box.textContent = "";
-    var list = CMDS.filter(function (x) {
-      return (filter === "Все" || x.cat === filter) &&
-        (!query || (x.name + " " + x.desc + " " + x.cat).toLowerCase().indexOf(query) >= 0);
-    });
-    list.forEach(function (x) {
-      var c = el("article", "cmd"); c.style.borderLeft = "3px solid " + (COLORS[x.cat] || "#A78BFA");
-      c.appendChild(el("code", null, x.syntax));
-      c.appendChild(el("p", null, x.desc));
-      var m = el("div", "meta");
-      m.appendChild(el("span", "who", x.access));
-      m.appendChild(el("span", "kind", x.kind === "slash" ? "slash · " + x.cat : "фраза · " + x.cat));
-      var cp = el("button", "copy", "копировать"); cp.type = "button";
-      cp.onclick = function () {
-        var text = x.kind === "slash" ? x.name : x.name.replace(/^«|».*$/g, "");
-        var ok = function () { cp.textContent = "скопировано"; setTimeout(function () { cp.textContent = "копировать"; }, 1500); };
-        if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(ok, function () { cp.textContent = "не вышло"; });
-        else cp.textContent = "выдели вручную";
-      };
-      m.appendChild(cp);
-      c.appendChild(m);
-      box.appendChild(c);
-    });
-    $("count").textContent = "показано " + list.length + " из " + CMDS.length + " (slash: " + CMDS.filter(function (x) { return x.kind === "slash"; }).length + ", фраз: " + CMDS.filter(function (x) { return x.kind !== "slash"; }).length + ")";
-  }
-  setFilter("Все");
 
   /* ---------- при входе на слайд ---------- */
   var pipeTimer = null;

@@ -12,7 +12,7 @@
 
 ## Файлы
 - `index.html`, `styles.css`, `app.js` — сама презентация (без библиотек);
-- `commands.js` — каталог команд музыкального бота (по bot.py и textcmds.py);
+ 
 - `LANI_Presentation.pdf`, `LANI_Presentation.pptx` — слайды картинками (интерактивный каталог — только в браузере);
 - `presentation_research.md` — откуда взяты факты.
 

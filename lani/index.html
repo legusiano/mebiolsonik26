@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <title>LANI — музыкальный бот для Discord</title>
-<meta name="description" content="Lani — музыкальный бот для Discord: умный поиск треков, плеер с очередью, личные плейлисты и управление через личные сообщения.">
+<meta name="description" content="Lani — музыкальный бот для Discord: умный поиск, плеер с очередью, личные плейлисты, веб-панель с модерацией по серверам и защищённым входом.">
 <meta property="og:title" content="LANI — музыкальный бот для Discord">
 <meta property="og:description" content="Твоя музыка. Твой плейлист. Твой сервер.">
 <meta name="theme-color" content="#120F1A">
@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
-<link rel="stylesheet" href="styles.css?v=20261025m">
+<link rel="stylesheet" href="styles.css?v=20261025p">
 </head>
 <body>
 <div class="bg" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><div class="grid"></div></div>
@@ -44,9 +44,9 @@
 </section>
 
 <!-- 2 -->
-<section class="slide" data-title="Что такое Lani">
+<section class="slide" data-title="Музыка без лишних действий">
   <p class="kicker">01 · о боте</p>
-  <h2>Всё для музыки <em>в одном боте</em></h2>
+  <h2>Музыка <em>без лишних действий</em></h2>
   <p class="lead narrow">Lani ищет треки, играет их в голосовом канале, ведёт очередь и хранит твои плейлисты.</p>
   <div class="cards c4">
     <article class="card a-cyan"><span class="num mono">01</span><h3>Поиск</h3><p>Название, исполнитель, альбом или ссылка.</p></article>
@@ -114,49 +114,66 @@
     <article class="card a-pink"><h3>История</h3><p>Что ты слушал. Можно выключить — история сразу очистится.</p></article>
     <article class="card a-cyan"><h3>Импорт</h3><p>Из ссылки на плейлист YouTube или SoundCloud.</p></article>
     <article class="card a-violet"><h3>Экспорт</h3><p>Список треков текстовым файлом.</p></article>
-    <article class="card a-pink"><h3>Без дублей</h3><p>Повтор не добавится. Пропавший трек помечается, а не удаляется молча.</p></article>
+    <article class="card a-pink"><h3>Через ЛС</h3><p>Напиши Lani «исполнитель — песня»: найдёт, сохранит или включит на сервере, где ты в голосовом.</p></article>
   </div>
 </section>
 
 <!-- 6 -->
-<section class="slide" data-title="Управление через ЛС">
-  <p class="kicker">05 · личные сообщения</p>
-  <h2>Твоя библиотека <em>всегда под рукой</em></h2>
+<section class="slide" data-title="Веб-панель">
+  <p class="kicker">05 · веб-панель</p>
+  <h2>Настройки бота <em>в одном месте</em></h2>
   <div class="split2">
-    <div class="glass mock dm" aria-label="Пример переписки с Lani">
-      <p class="me">Кино — Группа крови</p>
-      <p class="bot">Результаты по «Кино — Группа крови»:<br><b>1.</b> Кино — Группа крови · 4:44 · SoundCloud<br><b>2.</b> Кино — Группа крови · 4:45 · YouTube</p>
-      <div class="btns"><span class="btn primary">Включить</span><span class="btn">В избранное</span><span class="btn">В плейлист…</span></div>
-      <p class="bot small">Сохранено в «Избранное»: Кино — Группа крови</p>
+    <div class="glass mock" aria-label="Пример страницы «Мои серверы»">
+      <p class="mock-q mono">/lani/servers</p>
+      <ol class="results plain">
+        <li class="on"><b>Мой сервер</b><span>Lani установлена · вы владелец · Настроить</span></li>
+        <li><b>Дота-тусовка</b><span>Lani установлена · вы администратор · Настроить</span></li>
+        <li><b>Учёба</b><span>Lani не установлена · Добавить Lani на сервер</span></li>
+      </ol>
+      <div class="btns"><span class="btn">Обзор</span><span class="btn primary">Модерация</span><span class="btn">Общение</span><span class="btn">Музыка</span><span class="btn">Роли</span><span class="btn">Журналы</span></div>
     </div>
     <ul class="ticks big">
-      <li>Пиши в ЛС просто «исполнитель — песня» — это поиск</li>
-      <li>Сохраняй в «Избранное» и плейлисты, не засоряя общий чат</li>
-      <li>«Включить» — трек играет на сервере, где ты сейчас в голосовом канале</li>
-      <li>В голосовом на нескольких серверах — Lani спросит, где включить</li>
-      <li>Все команды /плейлист работают и в ЛС</li>
+      <li>Видны только серверы, где ты владелец или администратор</li>
+      <li>Права проверяются в Discord при каждом сохранении</li>
+      <li>Настройки сервера A никогда не попадают на сервер B</li>
+      <li>Плейлисты — тоже в панели; в ЛС Lani — кнопки «Открыть панель» и «Выбрать сервер»</li>
     </ul>
   </div>
 </section>
 
 <!-- 7 -->
-<section class="slide catalog-slide" data-title="Простой интерфейс">
-  <div class="cat-head">
-    <div><p class="kicker">06 · интерфейс</p><h2>Ничего лишнего. <em>Только музыка</em></h2></div>
-    <label class="search"><span class="sr">Поиск команды</span><input id="q" type="search" placeholder="найти: очередь, плейлист…" autocomplete="off"></label>
+<section class="slide" data-title="Модерация">
+  <p class="kicker">06 · модерация</p>
+  <h2>Правила <em>каждого сервера</em></h2>
+  <div class="cards c3">
+    <article class="card a-cyan"><h3>Слова и фразы</h3><p>Целиком, как слово или как вхождение. Регистр, пробелы, точки и латинские двойники букв не спасут.</p></article>
+    <article class="card a-violet"><h3>Действия</h3><p>Удалить, предупредить, записать в журнал, тайм-аут — можно сразу несколько.</p></article>
+    <article class="card a-pink"><h3>Исключения</h3><p>Каналы, роли, участники. Модераторы не проверяются.</p></article>
+    <article class="card a-cyan"><h3>Антиспам</h3><p>Повторы, лишние упоминания, чужие приглашения. По умолчанию выключен.</p></article>
+    <article class="card a-violet"><h3>Проверка</h3><p>Правило можно проверить на примере текста до сохранения.</p></article>
+    <article class="card a-pink"><h3>Журналы</h3><p>Срабатывания и все изменения в панели — кто и когда.</p></article>
   </div>
-  <div class="chips" id="chips" role="group" aria-label="Группы"></div>
-  <p class="count mono" id="count" aria-live="polite"></p>
-  <div class="catalog" id="catalog" tabindex="0" aria-label="Список команд"></div>
 </section>
 
 <!-- 8 -->
+<section class="slide" data-title="Безопасность">
+  <p class="kicker">07 · безопасность</p>
+  <h2>Защищённый вход <em>и 2FA</em></h2>
+  <div class="cards c4">
+    <article class="card a-cyan"><span class="num mono">01</span><h3>Пароль только на сайте</h3><p>Lani никогда не попросит его в Discord. Хранится как хеш Argon2id.</p></article>
+    <article class="card a-violet"><span class="num mono">02</span><h3>Почта и Discord</h3><p>Подтверждение почты и привязка Discord без дубликатов.</p></article>
+    <article class="card a-pink"><span class="num mono">03</span><h3>2FA</h3><p>Код из приложения, QR-код и одноразовые резервные коды.</p></article>
+    <article class="card a-cyan"><span class="num mono">04</span><h3>Сеансы</h3><p>Ограничение попыток, срок действия, «завершить другие сеансы».</p></article>
+  </div>
+</section>
+
+<!-- 9 -->
 <section class="slide cover final" data-title="Финал">
   <div class="orb small" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
   <div class="cover-text">
     <h2 class="mega">LANI</h2>
-    <p class="lead">Включай музыку. Собирай плейлисты. Наслаждайся.</p>
-    <p class="sub mono">/музыка играть · /плейлист · /избранное</p>
+    <p class="lead">Твоя музыка. Твой сервер. Твои правила.</p>
+    <p class="sub mono">/музыка играть · /плейлист · веб-панель</p>
     <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   </div>
 </section>
@@ -170,7 +187,6 @@
   <button class="nav-btn" id="next" type="button" aria-label="Далее">→</button>
 </footer>
 
-<script src="commands.js?v=20261025m"></script>
-<script src="app.js?v=20261025m"></script>
+<script src="app.js?v=20261025p"></script>
 </body>
 </html>
