@@ -13,7 +13,7 @@
 ## Файлы
 - `index.html`, `styles.css`, `app.js` — сама презентация (без библиотек);
 - `commands.js` — каталог команд, собранный из исходников Лани;
-- `LANI_Presentation.pdf`, `LANI_Presentation.pptx` — 26 слайдов картинками (интерактивный каталог — только в браузере);
+- `LANI_Presentation.pdf`, `LANI_Presentation.pptx` — 28 слайдов картинками (интерактивный каталог — только в браузере);
 - `presentation_research.md` — откуда взяты факты.
 
 ## Как пересобрать PDF и PPTX

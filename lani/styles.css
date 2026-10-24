@@ -251,3 +251,7 @@ h3 { margin: 0 0 8px; font: 700 19px/1.25 var(--head); }
 
 /* кадры для экспорта */
 .export .hud, .export .ctrl, .export .bar { display: none !important; }
+
+/* выравнивание: подзаголовки и подписи — по той же колонке, что и остальной текст слайда */
+.slide > .lead.narrow, .slide > .note { margin-left: auto; margin-right: auto; max-width: 1240px; }
+.slide > .lead.narrow { padding-right: min(30%, 420px); }
