@@ -11,7 +11,7 @@ window.PROJECTS = [
     status: "В разработке",
     description: "Бот-собеседница и помощница сервера: модерация, ранги, мини-игры, музыка и голосовой чат.",
     tags: ["Python", "discord.py", "голос"],
-    image: "", url: ""
+    image: "", url: "https://legusiano.github.io/mebiolsonik26/lani/"
   },
   {
     title: "Голосовой модуль",
