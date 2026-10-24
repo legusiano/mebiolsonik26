@@ -1,4 +1,4 @@
-/* Презентация LANI: навигация, каталог команд, схема, конвейер. Без библиотек. */
+/* Презентация LANI: навигация и каталог команд. Без библиотек. */
 (function () {
   "use strict";
   var $ = function (id) { return document.getElementById(id); };
@@ -88,8 +88,7 @@
 
   /* ---------- каталог команд ---------- */
   var CMDS = window.LANI_COMMANDS || [];
-  var COLORS = { "Основные": "#A78BFA", "Голос и музыка": "#C4B5FD", "AI и диалог": "#F0ABFC", "Игры": "#86EFAC", "Настройки": "#FCD34D",
-    "Модерация": "#FDA4AF", "Администрирование": "#DDD6FE", "Владелец бота": "#F0ABFC", "Диагностика": "#A78BFA", "Служебные": "#A9A2BC" };
+  var COLORS = { "Плеер": "#A78BFA", "Поиск": "#C4B5FD", "Очередь": "#DDD6FE", "Плейлисты": "#F0ABFC", "Текстом": "#86EFAC" };
   var cats = Object.keys(COLORS).filter(function (c) { return CMDS.some(function (x) { return x.cat === c; }); });
   var filter = "Все", query = "";
   cats.forEach(function (c) {
@@ -97,7 +96,7 @@
     var b = el("button", "catcard"); b.type = "button"; b.style.setProperty("--acc", COLORS[c]);
     b.appendChild(el("b", null, n)); b.appendChild(document.createTextNode(c));
     b.onclick = function () { setFilter(c); show(slides.indexOf(document.querySelector(".catalog-slide"))); };
-    $("catgrid").appendChild(b);
+    if ($("catgrid")) $("catgrid").appendChild(b);
   });
   ["Все"].concat(cats).forEach(function (c) {
     var b = el("button", "chip", c); b.type = "button"; b.dataset.c = c;

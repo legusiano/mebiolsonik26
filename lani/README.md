@@ -1,4 +1,4 @@
-# LANI — презентация
+# LANI — презентация музыкального бота
 
 - **Онлайн:** https://legusiano.github.io/mebiolsonik26/lani/
 - **Локально:** из папки сайта `python -m http.server 8000` → http://localhost:8000/lani/ (можно и открыть `index.html` двойным щелчком).
@@ -12,8 +12,8 @@
 
 ## Файлы
 - `index.html`, `styles.css`, `app.js` — сама презентация (без библиотек);
-- `commands.js` — каталог команд, собранный из исходников Лани;
-- `LANI_Presentation.pdf`, `LANI_Presentation.pptx` — 28 слайдов картинками (интерактивный каталог — только в браузере);
+- `commands.js` — каталог команд музыкального бота (по bot.py и textcmds.py);
+- `LANI_Presentation.pdf`, `LANI_Presentation.pptx` — слайды картинками (интерактивный каталог — только в браузере);
 - `presentation_research.md` — откуда взяты факты.
 
 ## Как пересобрать PDF и PPTX

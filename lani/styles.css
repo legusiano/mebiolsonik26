@@ -1,6 +1,6 @@
-/* LANI — презентация: тёмная тема, мягкий фиолетовый */
+/* LANI — презентация музыкального бота: тёмная тема, фиолетовые и лавандовые акценты */
 :root {
-  --bg: #14111C; --bg2: #1D1829; --cyan: #A78BFA; --violet: #C4B5FD; --pink: #F0ABFC;
+  --bg: #120F1A; --bg2: #1D1829; --cyan: #A78BFA; --violet: #C4B5FD; --pink: #F0ABFC;
   --text: #ECE8F5; --muted: #A9A2BC; --line: rgba(167, 139, 250, .18); --glass: rgba(33, 27, 48, .72);
   --head: "Manrope", "Segoe UI", system-ui, sans-serif; --body: "Manrope", "Segoe UI", system-ui, sans-serif;
   --mono: "JetBrains Mono", Consolas, monospace;
@@ -253,5 +253,31 @@ h3 { margin: 0 0 8px; font: 700 19px/1.25 var(--head); }
 .export .hud, .export .ctrl, .export .bar { display: none !important; }
 
 /* выравнивание: подзаголовки и подписи — по той же колонке, что и остальной текст слайда */
-.slide > .lead.narrow, .slide > .note { margin-left: auto; margin-right: auto; max-width: 1240px; }
+.slide > .lead.narrow, .slide > .note, .slide > .kicker { margin-left: auto; margin-right: auto; max-width: 1240px; }
 .slide > .lead.narrow { padding-right: min(30%, 420px); }
+
+/* музыкальные макеты */
+.num { display: block; margin-bottom: 14px; font-size: 13px; color: var(--cyan); letter-spacing: .12em; }
+.mock { padding: 22px; border-radius: 22px; }
+.mock-q { margin: 0 0 14px; font-size: 14px; color: var(--muted); } .mock-q b { color: var(--text); }
+.results { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-direction: column; gap: 8px; counter-reset: r; }
+.results li { counter-increment: r; display: grid; grid-template-columns: 26px 1fr; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); }
+.results li::before { content: counter(r); grid-row: span 2; color: var(--cyan); font-family: var(--mono); }
+.results li.on { border-color: var(--cyan); background: rgba(167, 139, 250, .1); }
+.results b { font-weight: 600; } .results span { font-size: 13px; color: var(--muted); }
+.btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn { padding: 7px 14px; border-radius: 10px; border: 1px solid var(--line); background: rgba(167, 139, 250, .06); font-size: 14px; }
+.btn.primary { background: var(--cyan); color: #120F1A; border-color: var(--cyan); font-weight: 700; }
+.player .np { margin: 0; font: 600 13px var(--mono); color: var(--cyan); letter-spacing: .08em; text-transform: uppercase; }
+.player .track { margin: 8px 0 16px; font: 700 clamp(22px, 2.4vw, 32px)/1.2 var(--head); }
+.progress { height: 6px; border-radius: 3px; background: rgba(167, 139, 250, .15); overflow: hidden; }
+.progress i { display: block; height: 100%; width: var(--p); background: linear-gradient(90deg, var(--cyan), var(--violet)); }
+.player .time { margin: 10px 0 16px; font-size: 13px; color: var(--muted); }
+.chipset { display: flex; flex-wrap: wrap; gap: 8px; align-content: flex-start; }
+.chipset span { padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--glass); font-size: 15px; }
+.chipset .note { flex-basis: 100%; }
+.dm p { margin: 0 0 10px; padding: 10px 14px; border-radius: 14px; max-width: 92%; font-size: 15px; }
+.dm .me { margin-left: auto; background: rgba(167, 139, 250, .18); width: fit-content; }
+.dm .bot { background: rgba(255, 255, 255, .04); border: 1px solid var(--line); }
+.dm .bot.small { font-size: 13px; color: var(--muted); margin-top: 10px; }
+.dm .btns { margin-bottom: 4px; }
