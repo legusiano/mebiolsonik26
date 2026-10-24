@@ -3,9 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://*.mzstatic.com; media-src 'self' https://*.itunes.apple.com https://*.apple.com; connect-src 'self'; frame-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>mebiolsonik26 — Discord-боты и автоматизация</title>
 <meta name="description" content="Создаю Discord-ботов на заказ, автоматизирую задачи и разрабатываю собственные цифровые проекты.">
-<meta name="theme-color" content="#030812">
+<meta name="author" content="mebiolsonik26">
+<meta name="theme-color" content="#04070f">
+<link rel="canonical" href="https://legusiano.github.io/mebiolsonik26/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="mebiolsonik26 — Discord-боты и автоматизация">
 <meta property="og:description" content="Разработка. Автоматизация. Цифровые проекты. Портфолио, услуги и плеер NORTH MUSIC.">
@@ -16,24 +20,23 @@
 <link rel="apple-touch-icon" href="assets/img/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Unbounded:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;600&family=Manrope:wght@400;500;700&family=Unbounded:wght@400;600;800&display=swap">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <a class="skip" href="#main">Перейти к содержимому</a>
-<div class="loader" aria-hidden="true"><span class="logo-mark">m26</span></div>
 <div class="progress" aria-hidden="true"><i id="progress"></i></div>
-
 <div class="sky" aria-hidden="true">
   <div class="aurora a1"></div><div class="aurora a2"></div><div class="aurora a3"></div>
   <canvas id="stars"></canvas>
 </div>
+<div class="grain" aria-hidden="true"></div>
 <div class="glow" id="glow" aria-hidden="true"></div>
 
 <header class="top">
   <a class="brand" href="#hero" aria-label="mebiolsonik26 — наверх"><span class="logo-mark">m26</span><span class="brand-text">mebiolsonik26</span></a>
   <nav class="nav" id="nav" aria-label="Разделы">
-    <a href="#about">Обо мне</a><a href="#works">Работы</a><a href="#music">Музыка</a><a href="#updates">Новости</a><a href="#contact">Контакты</a>
+    <a href="#music">Музыка</a><a href="#about">Обо мне</a><a href="#works">Работы</a><a href="#updates">Лог</a><a href="#contact">Контакты</a>
   </nav>
   <div class="top-actions">
     <button class="icon-btn" id="theme" type="button" aria-label="Сменить оформление: полярная ночь" title="Полярная ночь">
@@ -46,73 +49,55 @@
 </header>
 
 <main id="main">
+  <!-- ===== первый экран ===== -->
   <section class="hero" id="hero">
-    <p class="eyebrow"><span id="typing" aria-hidden="true"></span><span class="sr-only" id="typing-static"></span></p>
-    <h1 class="hero-title" id="hero-title">ME BIOLSONIK26</h1>
-    <p class="hero-sub" id="hero-sub"></p>
-    <p class="hero-text" id="hero-text"></p>
-    <div class="hero-actions">
-      <a class="btn primary" href="#works">Мои работы</a>
-      <a class="btn" data-tg href="https://t.me/ZloOi72" target="_blank" rel="noopener">Заказать бота</a>
-      <a class="btn ghost" href="#contact">Связаться со мной</a>
-    </div>
-    <a class="scroll-hint" href="#about" aria-label="Листать вниз"><span></span></a>
-  </section>
-
-  <section class="section" id="about" aria-labelledby="about-h">
-    <div class="wrap">
-      <h2 class="h2 reveal" id="about-h"><span>01</span>Обо мне</h2>
-      <div class="about-grid">
-        <div class="glass about-text reveal" id="about-text"></div>
-        <div class="glass learning reveal">
-          <h3>Что я сейчас изучаю</h3>
-          <ul id="learning" class="dots"></ul>
+    <div class="hero-grid">
+      <div class="hero-main">
+        <p class="eyebrow mono"><span class="dot"></span><span id="typing" aria-hidden="true"></span><span class="sr-only" id="typing-static"></span></p>
+        <h1 class="hero-title" id="hero-title" tabindex="-1"><span class="l1">ME</span> <span class="l2">BIOLSONIK<em>26</em></span></h1>
+        <p class="hand hero-note" aria-hidden="true">привет, это я
+          <svg class="arrow" viewBox="0 0 120 60"><path d="M4 8c30 4 60 14 86 38m0 0-3-16m3 16-17-2"/></svg>
+        </p>
+        <p class="hero-sub" id="hero-sub"></p>
+        <p class="hero-text" id="hero-text"></p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#works">Мои работы</a>
+          <a class="btn" data-tg href="https://t.me/ZloOi72" target="_blank" rel="noopener">Заказать бота</a>
+          <a class="btn ghost" href="#contact">Связаться со мной</a>
         </div>
       </div>
-      <div class="cards services" id="services"></div>
-      <p class="note reveal" id="services-note"></p>
-    </div>
-  </section>
-
-  <section class="section" id="works" aria-labelledby="works-h">
-    <div class="wrap">
-      <h2 class="h2 reveal" id="works-h"><span>02</span>Мои работы</h2>
-      <div class="chips" id="work-filters" role="group" aria-label="Фильтр проектов"></div>
-      <div class="cards projects" id="projects"></div>
-      <div class="glass soon" id="soon" hidden>
-        <h3>Новые проекты скоро</h3>
-        <p>Здесь появятся работы, как только они будут готовы к показу.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section promo-wrap" id="promo" aria-labelledby="promo-h" hidden>
-    <div class="wrap">
-      <div class="promo reveal">
-        <div>
-          <h2 id="promo-h"></h2>
-          <p id="promo-text"></p>
+      <aside class="hero-side" aria-label="Коротко">
+        <button class="sticker now-sticker" id="hero-listen" type="button">
+          <span class="mono small">сейчас в голове</span>
+          <b id="hero-track">Weezer — Buddy Holly</b>
+          <span class="hand">жми, послушаем ▶</span>
+        </button>
+        <div class="sticker yellow tilt-r">
+          <span class="hand big">боты под ключ</span>
+          <span class="small">идея → ТЗ → рабочий бот</span>
         </div>
-        <a class="btn primary" data-tg id="promo-btn" href="https://t.me/ZloOi72" target="_blank" rel="noopener"></a>
-      </div>
-      <a class="banner" id="banner" hidden target="_blank" rel="noopener sponsored"><img alt="" loading="lazy"></a>
+        <div class="sticker tags-sticker">
+          <span class="tag">Python</span><span class="tag">discord.py</span><span class="tag">API</span><span class="tag">автоматизация</span><span class="tag">голос</span>
+        </div>
+      </aside>
     </div>
   </section>
 
+  <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+  <!-- ===== музыка ===== -->
   <section class="section" id="music" aria-labelledby="music-h">
     <div class="wrap">
-      <h2 class="h2 reveal" id="music-h"><span>03</span>North Music Player</h2>
-      <div class="player glass reveal">
-        <div class="stage">
-          <div class="screen" id="screen">
-            <div class="screen-cover" id="screen-cover">
-              <img id="cover" alt="" hidden>
-              <div class="screen-msg" id="screen-msg">
-                <b>Плеер выключен</b>
-                <span>Нажми Play — подключится официальный плеер YouTube. Сам по себе звук не включится.</span>
-              </div>
-            </div>
-            <div id="yt"></div>
+      <div class="sec-head reveal">
+        <h2 class="h2" id="music-h">North Music</h2>
+        <p class="hand side-note">мой плейлист: Weezer и всё, что рядом</p>
+      </div>
+      <div class="player reveal">
+        <div class="deck">
+          <div class="art">
+            <div class="vinyl" id="vinyl" aria-hidden="true"><i></i></div>
+            <img id="cover" alt="" width="600" height="600">
+            <span class="badge mono" id="badge">превью 0:30</span>
           </div>
           <div class="now">
             <div class="now-text"><b id="now-title">Выбери трек</b><span id="now-artist">—</span></div>
@@ -122,60 +107,110 @@
           </div>
           <div class="seek">
             <span id="t-cur">0:00</span>
-            <input type="range" id="seek" min="0" max="1000" value="0" step="1" aria-label="Перемотка" disabled>
-            <span id="t-dur">0:00</span>
+            <input type="range" id="seek" min="0" max="1000" value="0" step="1" aria-label="Перемотка">
+            <span id="t-dur">0:30</span>
           </div>
           <div class="controls">
+            <button class="icon-btn" id="shuffle" type="button" aria-label="Перемешать" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h3c4 0 6 10 10 10h5M18 14l3 3-3 3M3 17h3c1.4 0 2.6-1.2 3.6-2.8M14 8.6C15 7.6 15.6 7 16 7h5M18 4l3 3-3 3"/></svg></button>
             <button class="icon-btn" id="prev" type="button" aria-label="Предыдущий трек"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5v14M19 6l-9 6 9 6z"/></svg></button>
             <button class="play" id="play" type="button" aria-label="Играть"><svg viewBox="0 0 24 24" aria-hidden="true" id="play-ico"><path d="M8 5l11 7-11 7z"/></svg></button>
             <button class="icon-btn" id="next" type="button" aria-label="Следующий трек"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 5v14M5 6l9 6-9 6z"/></svg></button>
+            <a class="icon-btn" id="full" href="#" target="_blank" rel="noopener" aria-label="Слушать полностью в Apple Music" title="Полностью в Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg></a>
           </div>
           <div class="volume">
             <button class="icon-btn" id="mute" type="button" aria-label="Выключить звук" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" id="mute-ico"><path d="M4 9h4l5-4v14l-5-4H4zM16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg></button>
             <input type="range" id="vol" min="0" max="100" value="70" aria-label="Громкость">
           </div>
-          <p class="player-note" id="player-note">Громкость, перемотка и время работают через официальный YouTube IFrame API. На iPhone и iPad громкость меняется только кнопками телефона — это ограничение iOS.</p>
+          <p class="player-note" id="player-note">Играют официальные 30-секундные отрывки из каталога Apple — целиком по кнопке ↗. Без YouTube.</p>
         </div>
         <div class="library">
-          <div class="lib-tools">
-            <label class="search"><span class="sr-only">Поиск по названию и исполнителю</span>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>
-              <input type="search" id="q" placeholder="Поиск: трек или исполнитель" autocomplete="off">
-            </label>
-            <div class="chips small" id="track-filters" role="group" aria-label="Фильтр треков"></div>
-          </div>
-          <p class="lib-count" id="lib-count" aria-live="polite"></p>
+          <label class="search"><span class="sr-only">Поиск по названию и исполнителю</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>
+            <input type="search" id="q" placeholder="трек или исполнитель…" autocomplete="off">
+          </label>
+          <div class="chips small" id="track-filters" role="group" aria-label="Фильтр треков"></div>
+          <p class="lib-count mono" id="lib-count" aria-live="polite"></p>
           <ol class="tracks" id="tracks"></ol>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="updates" aria-labelledby="updates-h">
+  <!-- ===== обо мне ===== -->
+  <section class="section" id="about" aria-labelledby="about-h">
     <div class="wrap">
-      <h2 class="h2 reveal" id="updates-h"><span>04</span>Обновления</h2>
-      <ol class="timeline" id="timeline"></ol>
+      <div class="sec-head reveal">
+        <h2 class="h2" id="about-h">Обо мне</h2>
+        <p class="hand side-note">коротко, без воды</p>
+      </div>
+      <div class="bento">
+        <div class="tile t-about reveal" id="about-text"></div>
+        <div class="tile t-learn reveal">
+          <h3 class="mono small up">сейчас изучаю</h3>
+          <ul id="learning" class="ticks"></ul>
+        </div>
+        <div class="tile t-note sticker yellow reveal"><p class="hand big" id="services-note"></p></div>
+        <div id="services" class="services"></div>
+      </div>
     </div>
   </section>
 
+  <!-- ===== работы ===== -->
+  <section class="section" id="works" aria-labelledby="works-h">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="h2" id="works-h">Мои работы</h2>
+        <p class="hand side-note">что уже есть и что в процессе</p>
+      </div>
+      <div class="chips" id="work-filters" role="group" aria-label="Фильтр проектов"></div>
+      <ul class="worklist" id="projects"></ul>
+      <div class="tile soon" id="soon" hidden>
+        <h3>Новые проекты скоро</h3>
+        <p>Здесь появятся работы, как только они будут готовы к показу.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== промо ===== -->
+  <section class="section promo-wrap" id="promo" aria-labelledby="promo-h" hidden>
+    <div class="wrap">
+      <div class="promo reveal">
+        <p class="hand promo-note" aria-hidden="true">это реклама. моя собственная :)</p>
+        <h2 id="promo-h"></h2>
+        <p id="promo-text"></p>
+        <a class="btn primary" data-tg id="promo-btn" href="https://t.me/ZloOi72" target="_blank" rel="noopener"></a>
+      </div>
+      <a class="banner" id="banner" hidden target="_blank" rel="noopener sponsored"><img alt="" loading="lazy"></a>
+    </div>
+  </section>
+
+  <!-- ===== лог ===== -->
+  <section class="section" id="updates" aria-labelledby="updates-h">
+    <div class="wrap narrow">
+      <div class="sec-head reveal">
+        <h2 class="h2" id="updates-h">Лог обновлений</h2>
+        <p class="hand side-note">новое сверху</p>
+      </div>
+      <ol class="log mono" id="timeline"></ol>
+    </div>
+  </section>
+
+  <!-- ===== контакты ===== -->
   <section class="section" id="contact" aria-labelledby="contact-h">
     <div class="wrap">
-      <h2 class="h2 reveal" id="contact-h"><span>05</span>Связаться со мной</h2>
-      <div class="contact-grid">
-        <div class="glass contact-main reveal">
-          <p class="muted">Основной контакт</p>
-          <p class="tg-handle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/></svg><span id="tg-handle">@ZloOi72</span></p>
-          <div class="row">
-            <a class="btn primary" data-tg href="https://t.me/ZloOi72" target="_blank" rel="noopener">Написать в Telegram</a>
-            <button class="btn ghost" id="copy-tg" type="button">Скопировать контакт</button>
-          </div>
-          <p class="copied" id="copied" role="status" aria-live="polite"></p>
-        </div>
-        <div class="glass reveal" id="idea">
-          <h3 id="idea-h"></h3>
-          <p id="idea-text"></p>
-          <a class="btn" data-tg href="https://t.me/ZloOi72" target="_blank" rel="noopener">Рассказать идею</a>
-        </div>
+      <div class="sec-head reveal">
+        <h2 class="h2" id="contact-h">Связаться со мной</h2>
+        <p class="hand side-note">отвечаю в Telegram</p>
+      </div>
+      <a class="big-contact reveal" data-tg href="https://t.me/ZloOi72" target="_blank" rel="noopener"><span id="tg-handle">@ZloOi72</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+      <div class="contact-row reveal">
+        <a class="btn primary" data-tg href="https://t.me/ZloOi72" target="_blank" rel="noopener">Написать в Telegram</a>
+        <button class="btn ghost" id="copy-tg" type="button">Скопировать контакт</button>
+        <span class="copied mono" id="copied" role="status" aria-live="polite"></span>
+      </div>
+      <div class="tile idea reveal" id="idea">
+        <div><h3 id="idea-h"></h3><p id="idea-text"></p></div>
+        <a class="btn" data-tg href="https://t.me/ZloOi72" target="_blank" rel="noopener">Рассказать идею</a>
       </div>
       <div class="links" id="links"></div>
     </div>
@@ -183,15 +218,24 @@
 </main>
 
 <footer class="foot">
-  <span class="logo-mark">m26</span>
-  <p>© <span id="year">2026</span> mebiolsonik26 · Сделано под северным сиянием</p>
+  <p class="hand">сделано под северным сиянием и Weezer</p>
+  <p class="mono small">© <span id="year">2026</span> mebiolsonik26 · все права защищены · копирование дизайна и текстов без разрешения запрещено</p>
 </footer>
 
+<div class="mini" id="mini" hidden>
+  <img id="mini-cover" alt="" width="48" height="48">
+  <div class="mini-text"><b id="mini-title"></b><span id="mini-artist"></span></div>
+  <button class="icon-btn" id="mini-play" type="button" aria-label="Пауза"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5h3v14H8zM14 5h3v14h-3z"/></svg></button>
+  <button class="icon-btn" id="mini-next" type="button" aria-label="Следующий трек"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 5v14M5 6l9 6-9 6z"/></svg></button>
+  <i class="mini-bar" id="mini-bar"></i>
+</div>
 <a class="order-float" data-tg id="order-float" href="https://t.me/ZloOi72" target="_blank" rel="noopener" hidden>Заказать бота</a>
 <button class="to-top" id="to-top" type="button" aria-label="Наверх"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14l6-6 6 6"/></svg></button>
+<div class="copy-banner" id="copy-banner" hidden></div>
 
 <noscript><p class="noscript">Для портфолио и плеера нужен JavaScript. Связаться можно в Telegram: <a href="https://t.me/ZloOi72">@ZloOi72</a></p></noscript>
 
+<script src="assets/js/protect.js"></script>
 <script src="data/site.js"></script>
 <script src="data/projects.js"></script>
 <script src="data/tracks.js"></script>
