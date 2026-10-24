@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
 <title>LANI — презентация проекта</title>
-<meta name="description" content="Лани — Discord-бот с голосом, ИИ, играми и защитой сервера. История разработки и устройство проекта.">
-<meta name="theme-color" content="#F5F6FB">
+<meta name="description" content="Лани — бот для Discord: болтает, говорит голосом, играет, включает музыку и следит за порядком.">
+<meta name="theme-color" content="#14111C">
 <link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,60 +29,60 @@
 
 <main class="deck" id="deck">
 
-<!-- 1 ОБЛОЖКА -->
+<!-- 1 -->
 <section class="slide cover" data-title="Обложка">
   <div class="orb" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
   <div class="cover-text">
-    <p class="kicker">Discord · Голос · ИИ</p>
+    <p class="kicker">бот для Discord</p>
     <h1 class="mega">LANI</h1>
-    <p class="lead">Голос. Интеллект. Discord. Всё в одном проекте.</p>
-    <p class="sub">История разработки и развития нашего AI-бота</p>
+    <p class="lead">Болтает, говорит голосом, играет и следит за порядком на сервере.</p>
+    <p class="sub">Как мы её делали и что она умеет</p>
     <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-    <p class="hint mono">→ или пробел — дальше · F — полный экран</p>
+    <p class="hint mono">→ или пробел — дальше · F — на весь экран</p>
   </div>
 </section>
 
-<!-- 2 ЧТО ТАКОЕ -->
-<section class="slide" data-title="Что такое Лани">
-  <h2>Что такое <em>Лани</em></h2>
-  <p class="lead narrow">Бот-собеседница и помощница Discord-сервера. Отвечает, когда её зовут по имени, разговаривает голосом в звонке, играет, включает музыку и защищает сервер.</p>
+<!-- 2 -->
+<section class="slide" data-title="Кто такая Лани">
+  <h2>Кто такая <em>Лани</em></h2>
+  <p class="lead narrow">Бот, который живёт на нашем Discord-сервере. Отвечает, когда её позвали по имени.</p>
   <div class="cards c3">
-    <article class="card a-cyan"><b class="ico">💬</b><h3>Разговор</h3><p>«Лани, …», @Лани или ответ на её сообщение — ответ от ИИ или готовой фразой.</p></article>
-    <article class="card a-violet"><b class="ico">🎙</b><h3>Голос</h3><p>Слушает фразы с её именем в звонке и отвечает вслух.</p></article>
-    <article class="card a-pink"><b class="ico">🎮</b><h3>Игры</h3><p>Мафия с ведущей, викторины, загадки, «правда или действие».</p></article>
-    <article class="card a-cyan"><b class="ico">🎵</b><h3>Музыка</h3><p>Песни и плейлисты голосом или командой, своя громкость у каждого.</p></article>
-    <article class="card a-violet"><b class="ico">🛡</b><h3>Защита</h3><p>Антиспам, антимат, ссылки, капс, рейды, лестница наказаний.</p></article>
-    <article class="card a-pink"><b class="ico">🧭</b><h3>Помощник</h3><p>Напоминания, опросы, события сервера, контент дня, память.</p></article>
+    <article class="card a-cyan"><b class="ico">💬</b><h3>Болтает</h3><p>Напиши «Лани, …» — ответит. Можно спросить что угодно.</p></article>
+    <article class="card a-violet"><b class="ico">🎙</b><h3>Говорит голосом</h3><p>Заходит в звонок и отвечает вслух.</p></article>
+    <article class="card a-pink"><b class="ico">🎮</b><h3>Играет</h3><p>Мафия, викторины, загадки, «правда или действие».</p></article>
+    <article class="card a-cyan"><b class="ico">🎵</b><h3>Включает музыку</h3><p>Голосом или командой, есть плейлисты.</p></article>
+    <article class="card a-violet"><b class="ico">🛡</b><h3>Следит за порядком</h3><p>Убирает спам, мат и левые ссылки.</p></article>
+    <article class="card a-pink"><b class="ico">⏰</b><h3>Помогает</h3><p>Напоминания, опросы, дни рождения.</p></article>
   </div>
 </section>
 
-<!-- 3 ИДЕЯ -->
-<section class="slide split" data-title="Идея проекта">
+<!-- 3 -->
+<section class="slide split" data-title="Зачем мы её сделали">
   <div>
-    <h2>Идея</h2>
-    <p class="lead">Не набор отдельных ботов, а один персонаж: с ней можно поговорить, поиграть, послушать музыку — и она же следит за порядком.</p>
+    <h2>Зачем мы её <em>сделали</em></h2>
+    <p class="lead">Хотелось одного бота, а не десяти: чтобы с ним можно было и поговорить, и поиграть, и музыку включить.</p>
     <ul class="ticks">
-      <li>один характер в чате и в голосе</li>
-      <li>сама не вмешивается: реагирует, только когда позвали</li>
-      <li>простое делает без ИИ — быстро и бесплатно</li>
-      <li>опасное (баны, роли) — только с настоящими правами</li>
+      <li>в чате и в голосе — одна и та же Лани</li>
+      <li>сама не лезет в разговор — отвечает, когда зовут</li>
+      <li>простые вещи делает сразу, без нейросети</li>
+      <li>наказывать может только по просьбе админа</li>
     </ul>
   </div>
   <div class="quote glass">
-    <p>«Лани — это не просто бот с командами. Это персонаж сервера.»</p>
-    <span class="tag t-plan">концепция</span>
+    <p>«Удобный бот, с которым приятно общаться».</p>
+    <span class="tag t-plan">наша идея</span>
   </div>
 </section>
 
-<!-- 4 УЧАСТНИКИ -->
-<section class="slide" data-title="Участники">
+<!-- 4 -->
+<section class="slide" data-title="Команда">
   <h2>Команда <em>Лани</em></h2>
   <div class="people">
     <article class="person glass">
       <div class="avatar av1" aria-hidden="true"><i></i></div>
       <h3 class="mono">slonik1a1as</h3>
-      <p>Владелец Лани — в коде задан по Discord ID и как владелец по умолчанию (<span class="mono">OWNER_USERNAMES</span>).</p>
-      <span class="tag t-ok">подтверждено кодом</span>
+      <p>Владелец Лани.</p>
+      <span class="tag t-ok">владелец</span>
     </article>
     <article class="person glass">
       <div class="avatar av2" aria-hidden="true"><i></i></div>
@@ -91,316 +91,309 @@
       <span class="tag t-ok">разработчик · админ Лани</span>
     </article>
   </div>
-  <p class="note">Это Discord-имена. Никаких личных данных, фото и биографий.</p>
 </section>
 
-<!-- 5 АРХИТЕКТУРА -->
-<section class="slide" data-title="Архитектура">
-  <h2>Из чего состоит <em>Лани</em></h2>
-  <p class="lead narrow">Нажми на блок — покажу, что в нём.</p>
+<!-- 5 -->
+<section class="slide" data-title="Как она устроена">
+  <h2>Как она <em>устроена</em></h2>
+  <p class="lead narrow">Нажми на любой блок — расскажу, что это.</p>
   <div class="arch" id="arch">
-    <button class="node n-discord" data-info="Discord: сообщения, slash-команды, кнопки, голосовые каналы. Лани реагирует только на обращение по имени, @упоминание (в том числе через её роль) или Reply.">Discord</button>
-    <button class="node n-server" data-info="Сервер Render (24/7): основная Лани — чат, ИИ, игры, музыка, автомодерация, ранги, напоминания, контент дня, панель владельца. Работает и когда ПК выключен.">Сервер · bot.py</button>
-    <button class="node n-pc" data-info="ПК владельца: голосовой модуль voice.py — распознавание речи (Vosk + Whisper), ответы голосом (edge-tts), музыка в звонке. Выключен ПК — голоса нет, чат работает.">ПК · voice.py</button>
-    <button class="node n-db" data-info="Neon Postgres: общая база для сервера и ПК — память, ранги, настройки защиты и стиля, напоминания, плейлисты, отметки «жива».">Neon Postgres</button>
-    <button class="node n-ai" data-info="DeepSeek (deepseek-flash) — основной мозг; Gemini — запасной, если DeepSeek недоступен. Все запросы через один клиент: тайм-аут, очередь, статистика.">DeepSeek / Gemini</button>
-    <button class="node n-watch" data-info="GitHub Actions: агент-сторож каждые 30 минут проверяет, что Лани отмечается в базе, и пишет владельцу в Telegram при поломке.">Сторож · GitHub Actions</button>
+    <button class="node n-discord" data-info="Discord — тут живут наши сообщения, кнопки и звонки. Лани отвечает, только когда её позвали: «Лани, …», @Лани или ответ на её сообщение.">Discord</button>
+    <button class="node n-server" data-info="Сервер в интернете — работает всегда, даже ночью. Отвечает в чате, ведёт игры, включает музыку, следит за порядком.">Сервер</button>
+    <button class="node n-pc" data-info="Компьютер владельца — на нём работает голос: Лани слышит, что ей сказали в звонке, и отвечает вслух. Выключен компьютер — голоса нет, чат работает.">Компьютер (голос)</button>
+    <button class="node n-db" data-info="База данных — общая память: настройки сервера, напоминания, плейлисты и то, что попросили запомнить.">База данных</button>
+    <button class="node n-ai" data-info="Нейросеть DeepSeek придумывает ответы на сложные вопросы. Если она не отвечает — подстраховывает Gemini.">Нейросеть</button>
+    <button class="node n-watch" data-info="Сторож — раз в полчаса проверяет, жива ли Лани, и пишет владельцу в Telegram, если что-то сломалось.">Сторож</button>
     <svg class="links" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true">
       <path d="M50 10 L25 30"/><path d="M50 10 L75 30"/><path d="M25 30 L50 50"/><path d="M75 30 L50 50"/><path d="M25 30 L10 52"/><path d="M75 30 L90 52"/>
     </svg>
   </div>
-  <p class="info glass" id="arch-info" aria-live="polite">Выбери блок схемы.</p>
+  <p class="info glass" id="arch-info" aria-live="polite">Выбери блок.</p>
 </section>
 
-<!-- 6 ЦИФРЫ -->
-<section class="slide" data-title="Цифры">
-  <h2>Проект в <em>цифрах</em></h2>
+<!-- 6 -->
+<section class="slide" data-title="Немного цифр">
+  <h2>Немного <em>цифр</em></h2>
   <div class="stats">
-    <div class="stat"><b data-count="95">95</b><span>slash-команд</span></div>
-    <div class="stat"><b data-count="31">31</b><span>модуль Python</span></div>
-    <div class="stat"><b data-count="11600">11 600</b><span>строк кода (≈)</span></div>
-    <div class="stat"><b data-count="564">564</b><span>автотеста проходят</span></div>
+    <div class="stat"><b data-count="95">95</b><span>команд через «/»</span></div>
+    <div class="stat"><b data-count="31">31</b><span>файл с кодом</span></div>
+    <div class="stat"><b data-count="11600">11 600</b><span>строк кода</span></div>
+    <div class="stat"><b data-count="580">580</b><span>проверок проходят</span></div>
   </div>
-  <p class="note">Посчитано по исходникам 24.10.2026. Пользователей и активность не показываем — их никто не замерял.</p>
+  <p class="note">Посчитали по коду 24 октября 2026. Сколько людей пользуется — не считали, поэтому не пишем.</p>
 </section>
 
-<!-- 7 КОМАНДЫ ОБЗОР -->
+<!-- 7 -->
 <section class="slide" data-title="Команды">
-  <h2>Команды <em>Лани</em></h2>
-  <p class="lead narrow">95 slash-команд из кода и 20 фраз, которые она понимает в чате и голосом.</p>
+  <h2>Что можно <em>попросить</em></h2>
+  <p class="lead narrow">95 команд через «/» и ещё фразы, которые Лани понимает просто так — в чате и голосом.</p>
   <div class="catgrid" id="catgrid"></div>
-  <p class="note">Список собран автоматически из исходников, а не из README.</p>
+  <p class="note">Нажми на группу — откроется список.</p>
 </section>
 
-<!-- 8 КАТАЛОГ -->
-<section class="slide catalog-slide" data-title="Каталог команд">
+<!-- 8 -->
+<section class="slide catalog-slide" data-title="Все команды">
   <div class="cat-head">
-    <h2>Каталог</h2>
-    <label class="search"><span class="sr">Поиск команды</span><input id="q" type="search" placeholder="поиск: игра, музыка, ранг…" autocomplete="off"></label>
+    <h2>Все команды</h2>
+    <label class="search"><span class="sr">Поиск команды</span><input id="q" type="search" placeholder="найти: игра, музыка, опрос…" autocomplete="off"></label>
   </div>
-  <div class="chips" id="chips" role="group" aria-label="Категории"></div>
+  <div class="chips" id="chips" role="group" aria-label="Группы"></div>
   <p class="count mono" id="count" aria-live="polite"></p>
   <div class="catalog" id="catalog" tabindex="0" aria-label="Список команд"></div>
 </section>
 
-<!-- 9 ГОЛОС -->
-<section class="slide" data-title="Голосовая система">
-  <h2>Голосовой <em>конвейер</em></h2>
+<!-- 9 -->
+<section class="slide" data-title="Голос">
+  <h2>Как Лани <em>говорит</em></h2>
   <div class="pipe" id="pipe">
-    <div class="step"><b>Discord</b><span>звук из звонка</span></div>
-    <div class="step"><b>Vosk</b><span>ловит «Лани»</span></div>
-    <div class="step"><b>Whisper</b><span>уточняет фразу</span></div>
-    <div class="step"><b>Роутер</b><span>стоп · музыка · быстрые</span></div>
-    <div class="step"><b>DeepSeek</b><span>ответ потоком</span></div>
-    <div class="step"><b>edge-tts</b><span>голос по кускам</span></div>
-    <div class="step"><b>Discord</b><span>Лани говорит</span></div>
+    <div class="step"><b>Звонок</b><span>ты говоришь</span></div>
+    <div class="step"><b>Слышит имя</b><span>«Лани…»</span></div>
+    <div class="step"><b>Разбирает</b><span>что сказали</span></div>
+    <div class="step"><b>Решает</b><span>команда или вопрос</span></div>
+    <div class="step"><b>Думает</b><span>если нужен ответ</span></div>
+    <div class="step"><b>Озвучивает</b><span>по кусочкам</span></div>
+    <div class="step"><b>Отвечает</b><span>вслух в звонке</span></div>
   </div>
   <div class="cards c3 tight">
-    <article class="card a-cyan"><h3>Стоп — сразу</h3><p>«Лани, замолчи» обрывает речь и выбрасывает очередь, старый ответ не доигрывается.</p></article>
-    <article class="card a-violet"><h3>Говорит с первого куска</h3><p>Ответ режется на фразы и озвучивается, пока ИИ дописывает остальное.</p></article>
-    <article class="card a-pink"><h3>Запасные голоса</h3><p>Fish Audio (если есть ключ) → edge-tts → голос Windows без интернета.</p></article>
+    <article class="card a-cyan"><h3>«Лани, стоп»</h3><p>Сразу замолкает. Может сказать любой из звонка.</p></article>
+    <article class="card a-violet"><h3>Не ждёт до конца</h3><p>Начинает говорить, пока ещё дописывает ответ.</p></article>
+    <article class="card a-pink"><h3>Есть запасной голос</h3><p>Если основной не работает — говорит другим.</p></article>
   </div>
 </section>
 
-<!-- 10 КАК ОТВЕЧАЕТ -->
-<section class="slide split" data-title="Как Лани отвечает">
+<!-- 10 -->
+<section class="slide split" data-title="Как она отвечает">
   <div>
-    <h2>Как Лани <em>отвечает</em></h2>
-    <p class="lead">Сначала — можно ли без ИИ. Только если нельзя — DeepSeek.</p>
+    <h2>Как она <em>отвечает</em></h2>
+    <p class="lead">Если можно ответить сразу — отвечает сама. Если нужно подумать — спрашивает нейросеть.</p>
   </div>
   <div class="route">
-    <div class="r-in glass">Сообщение «Лани, …»</div>
+    <div class="r-in glass">«Лани, …»</div>
     <div class="r-split">
-      <div class="r-box local"><h3>Локально · 0 запросов к ИИ</h3><p>привет, спасибо, справка · кубик, монетка, время · стоп, выйди, громче · музыка · стиль · «что случилось» · мини-игры · напоминания</p></div>
-      <div class="r-box ai"><h3>ИИ · DeepSeek</h3><p>настоящие вопросы, разговор, пересказ чата, перевод, модерация по просьбе админа через инструменты</p></div>
+      <div class="r-box local"><h3>Сразу, сама</h3><p>привет, спасибо, что умеешь · кубик, монетка, сколько времени · стоп, выйди, громче · музыка · мини-игры · напоминания</p></div>
+      <div class="r-box ai"><h3>Через нейросеть</h3><p>вопросы и разговоры, «что я пропустил», перевод, модерация по просьбе админа</p></div>
     </div>
   </div>
 </section>
 
-<!-- 11 AI -->
-<section class="slide" data-title="AI и DeepSeek">
-  <h2>ИИ под <em>контролем</em></h2>
+<!-- 11 -->
+<section class="slide" data-title="Нейросеть">
+  <h2>Нейросеть <em>без сюрпризов</em></h2>
   <div class="cards c4">
-    <article class="card a-cyan"><b class="big">30 с</b><h3>тайм-аут</h3><p>Вместо 10 минут по умолчанию — зависший запрос не держит разговор.</p></article>
-    <article class="card a-violet"><b class="big">4</b><h3>запроса разом</h3><p>Остальные ждут очереди, а не бьют API пачкой.</p></article>
-    <article class="card a-pink"><b class="big">3→2 мин</b><h3>предохранитель</h3><p>3 сбоя DeepSeek подряд — 2 минуты сразу отвечает Gemini.</p></article>
-    <article class="card a-cyan"><b class="big">0</b><h3>секретов в статистике</h3><p>Считаются только числа: запросы, ошибки, тайм-ауты, среднее время.</p></article>
+    <article class="card a-cyan"><b class="big">30 с</b><h3>ждёт максимум</h3><p>Если ответа нет — не зависает, а пробует запасной вариант.</p></article>
+    <article class="card a-violet"><b class="big">4</b><h3>вопроса разом</h3><p>Остальные ждут очередь — так ничего не ломается.</p></article>
+    <article class="card a-pink"><b class="big">2 мин</b><h3>передышка</h3><p>Если нейросеть сбоит три раза подряд — 2 минуты отвечает запасная.</p></article>
+    <article class="card a-cyan"><b class="big">0</b><h3>паролей в отчётах</h3><p>Считаем только цифры, переписки и ключи никуда не пишем.</p></article>
   </div>
-  <p class="note">Денег и цен не показываем — точного расхода никто не замерял.</p>
 </section>
 
-<!-- 12 АКТИВАЦИЯ -->
-<section class="slide split" data-title="Как понимает">
+<!-- 12 -->
+<section class="slide split" data-title="Когда она слушает">
   <div>
-    <h2>Когда Лани <em>слушает</em></h2>
-    <p class="lead">Правило проверяется кодом до любых действий — не только в промпте.</p>
+    <h2>Когда она <em>слушает</em></h2>
+    <p class="lead">Лани не встревает в чужие разговоры.</p>
   </div>
   <div class="cards c1">
-    <article class="card a-cyan"><h3>✅ Реагирует</h3><p>«Лани, …», «Привет, Лани!», @Лани (и через её роль), Reply на её сообщение. Голосом — имя в начале фразы или перед вопросом.</p></article>
-    <article class="card a-pink"><h3>🤫 Молчит</h3><p>Разговоры <i>о</i> Лани («Лани вчера смешно ответила»), чужие сообщения, слово внутри другого («планирую»).</p></article>
+    <article class="card a-cyan"><h3>✅ Отвечает</h3><p>«Лани, …», «Привет, Лани!», @Лани или ответ на её сообщение. В звонке — когда фраза начинается с её имени.</p></article>
+    <article class="card a-pink"><h3>🤫 Молчит</h3><p>Когда о ней просто говорят («Лани вчера смешно ответила») и в чужих разговорах.</p></article>
   </div>
 </section>
 
-<!-- 13 ХАРАКТЕР -->
+<!-- 13 -->
 <section class="slide" data-title="Характер">
-  <h2>Характер: <em>один и спокойный</em></h2>
+  <h2>Характер: <em>просто приятная</em></h2>
   <div class="split2">
     <div class="glass pad">
-      <h3>Один характер</h3>
-      <div class="moods"><span>дружелюбная</span><span>спокойная</span><span>по делу</span><span>с юмором к месту</span></div>
-      <p>Без ревности, обид и ролевых сцен: сначала смысл ответа, потом тон. Одинаковая в чате и в голосе, от сообщений чата не «скачет».</p>
+      <h3>Какая она</h3>
+      <div class="moods"><span>дружелюбная</span><span>спокойная</span><span>по делу</span><span>шутит к месту</span></div>
+      <p>Не ревнует, не обижается и не устраивает сцен. Сначала отвечает на вопрос, а потом уже шутит. В чате и в голосе одинаковая.</p>
     </div>
     <div class="glass pad">
-      <h3>Стиль · выбирают люди</h3>
+      <h3>Тон можно поменять</h3>
       <div class="moods alt"><span>обычный</span><span>спокойный</span><span>весёлый</span><span>серьёзный</span><span>игривый</span><span>ночной</span></div>
-      <p>«Лани, спокойный режим», «Лани, короче», «говори медленнее», «без шуток». У каждого сервера свой.</p>
+      <p>«Лани, спокойный режим», «Лани, короче», «говори медленнее», «без шуток».</p>
     </div>
   </div>
 </section>
 
-<!-- 14 ПАМЯТЬ -->
+<!-- 14 -->
 <section class="slide split" data-title="Память">
   <div>
-    <h2>Память <em>под контролем</em></h2>
-    <p class="lead">Лани запоминает то, что попросили: «Лани, запомни, что я люблю доту».</p>
+    <h2>Что она <em>помнит</em></h2>
+    <p class="lead">Только то, что попросили: «Лани, запомни, что я люблю доту».</p>
   </div>
   <ul class="ticks big">
-    <li><b>/память</b> — посмотреть, удалить запись, очистить всё</li>
-    <li>можно выключить запоминание — сразу на всех серверах</li>
-    <li>пароли, токены, номера карт — не запоминает</li>
-    <li>записи старше года не используются</li>
-    <li>в ИИ уходит только нужное, не вся история</li>
+    <li><b>/память</b> — посмотреть, что она помнит, и удалить</li>
+    <li>можно попросить вообще ничего не запоминать</li>
+    <li>пароли и номера карт не запоминает никогда</li>
+    <li>старые записи (больше года) не использует</li>
   </ul>
 </section>
 
-<!-- 15 ИГРЫ -->
+<!-- 15 -->
 <section class="slide" data-title="Игры">
-  <h2>Игры</h2>
+  <h2>Во что можно <em>поиграть</em></h2>
   <div class="games">
-    <div class="game g1"><b>🕵️ Мафия</b><span>Лани — ведущая: ночи, голосования, роли в личку</span><em class="tag t-ai">с ИИ</em></div>
-    <div class="game g2"><b>❓ Викторина</b><span>/викторина по теме, рейтинг /топ</span><em class="tag t-ai">с ИИ</em></div>
-    <div class="game g3"><b>🧩 Загадки и вопросы</b><span>/игра загадка · вопрос — свой банк, мгновенно</span><em class="tag t-ok">без ИИ</em></div>
-    <div class="game g4"><b>🔢 Угадай число</b><span>подсказки «больше / меньше»</span><em class="tag t-ok">без ИИ</em></div>
-    <div class="game g5"><b>✊ КНБ · 🎁 событие</b><span>кто первым нажмёт — тому очко</span><em class="tag t-ok">без ИИ</em></div>
-    <div class="game g6"><b>🎲 Кубик · монетка · шар</b><span>и «правда или действие»</span><em class="tag t-ok">без ИИ</em></div>
+    <div class="game g1"><b>🕵️ Мафия</b><span>Лани ведущая: ночи, голосования, роли приходят в личку</span><em class="tag t-ai">с нейросетью</em></div>
+    <div class="game g2"><b>❓ Викторина</b><span>на любую тему, есть общий рейтинг</span><em class="tag t-ai">с нейросетью</em></div>
+    <div class="game g3"><b>🧩 Загадки и вопросы</b><span>кто первым ответит — тому очко</span><em class="tag t-ok">мгновенно</em></div>
+    <div class="game g4"><b>🔢 Угадай число</b><span>Лани подсказывает: больше или меньше</span><em class="tag t-ok">мгновенно</em></div>
+    <div class="game g5"><b>✊ Камень, ножницы, бумага</b><span>и «кто первым нажмёт»</span><em class="tag t-ok">мгновенно</em></div>
+    <div class="game g6"><b>🎲 Кубик, монетка, шар</b><span>и «правда или действие»</span><em class="tag t-ok">мгновенно</em></div>
   </div>
-  <p class="note">Ответ проверяет сервер: перечислить все слова подряд нельзя, второй раз очко за ту же загадку не дают.</p>
+  <p class="note">Схитрить не выйдет: перечислить все слова подряд не прокатит, и за одну загадку дважды очко не дают.</p>
 </section>
 
-<!-- 16 ПОМОЩНИК -->
-<section class="slide" data-title="Помощник сервера">
-  <h2>Помощник <em>сервера</em></h2>
+<!-- 16 -->
+<section class="slide" data-title="Для всех участников">
+  <h2>Что может <em>каждый</em></h2>
   <div class="cards c3">
-    <article class="card a-violet"><h3>🛡 Автомодерация</h3><p>Спам, флуд, мат (3 уровня строгости), ссылки, капс, массовые упоминания, рейды. Лестница наказаний, исключения, журнал.</p></article>
-    <article class="card a-cyan"><h3>📜 Правила</h3><p>Находит канал правил сервера и предлагает настройки защиты по ним — админ подтверждает.</p></article>
-    <article class="card a-pink"><h3>⏰ Напоминания</h3><p>«через 20 минут» или «завтра в 7:30», анонсы событий сервера за 15 минут.</p></article>
-    <article class="card a-cyan"><h3>📊 Опросы</h3><p>Кнопки: /опрос, /куда, /го — собрать людей в игру.</p></article>
-    <article class="card a-violet"><h3>🧩 Контент дня</h3><p>Загадка, вопрос и факт дня — с проверкой админом перед публикацией.</p></article>
-    <article class="card a-pink"><h3>🎂 И ещё</h3><p>Дни рождения, уровни за общение, /инфо, /снайп, /афк.</p></article>
+    <article class="card a-cyan"><h3>🎧 В звонке</h3><p>«Лани, выйди», «стоп», «громче», «тише», «повтори» — любой, кто в звонке.</p></article>
+    <article class="card a-violet"><h3>📊 Опросы и сборы</h3><p>«Лани, куда идём? в доту или в кс», /опрос, /го — раз в 5 минут.</p></article>
+    <article class="card a-pink"><h3>⏰ Напоминания</h3><p>«Лани, напомни через 20 минут…» или /напомнить.</p></article>
+    <article class="card a-cyan"><h3>🎵 Музыка</h3><p>«Лани, включи песню…», пауза, скип, своя громкость.</p></article>
+    <article class="card a-violet"><h3>🎮 Игры</h3><p>Все игры и мини-игры открыты для всех.</p></article>
+    <article class="card a-pink"><h3>🎛 Удобство</h3><p>«Лани, короче», «говори медленнее», «что случилось?».</p></article>
   </div>
 </section>
 
-<!-- 17 ПРИВИЛЕГИИ -->
-<section class="slide split" data-title="Права">
+<!-- 17 -->
+<section class="slide" data-title="Порядок на сервере">
+  <h2>Порядок на <em>сервере</em></h2>
+  <div class="cards c3">
+    <article class="card a-violet"><h3>🛡 Автозащита</h3><p>Спам, флуд, мат, левые ссылки, капс, массовые пинги, набеги ботов.</p></article>
+    <article class="card a-cyan"><h3>📜 Правила</h3><p>Сама находит канал с правилами и предлагает настройки — админ подтверждает.</p></article>
+    <article class="card a-pink"><h3>📈 По нарастающей</h3><p>Сначала предупреждение, потом мут подольше. Всё записывается в журнал.</p></article>
+  </div>
+  <p class="note">Если обычный участник просит забанить кого-то — Лани вежливо откажет и предложит написать админам.</p>
+</section>
+
+<!-- 18 -->
+<section class="slide split" data-title="Кто что может">
   <div>
-    <h2>Система <em>прав</em></h2>
-    <p class="lead">Права проверяет код перед каждым действием — по настоящим данным Discord, а не по словам «я админ».</p>
-    <p class="note">И главное: ранг Лани не даёт боту прав, которых у него нет в Discord, и не пробивает иерархию ролей.</p>
+    <h2>Кто что <em>может</em></h2>
+    <p class="lead">Права Лани проверяет по настоящим правам в Discord, а не по словам «я админ».</p>
+    <p class="note">Лани не может больше, чем ей разрешили в Discord.</p>
   </div>
   <ol class="ladder">
-    <li class="l7"><b>Владелец Лани</b><span>по Discord ID из настроек</span></li>
-    <li class="l6"><b>Админ Лани</b><span>назначает только владелец</span></li>
-    <li class="l5"><b>Хозяин</b><span>владелец сервера</span></li>
-    <li class="l4"><b>Админ</b><span>право «Администратор» / «Управлять сервером» или ранг</span></li>
-    <li class="l3"><b>Модератор</b><span>право «Тайм-аут участникам» или ранг</span></li>
-    <li class="l2"><b>VIP</b><span>без лимитов на вопросы</span></li>
-    <li class="l1"><b>Участник</b><span>разговор, игры, музыка</span></li>
+    <li class="l7"><b>Владелец Лани</b><span>всё</span></li>
+    <li class="l6"><b>Админ Лани</b><span>на всех серверах</span></li>
+    <li class="l5"><b>Хозяин сервера</b><span>его сервер</span></li>
+    <li class="l4"><b>Админ</b><span>настройки, наказания</span></li>
+    <li class="l3"><b>Модератор</b><span>мут, очистка чата</span></li>
+    <li class="l2"><b>VIP</b><span>без лимита вопросов</span></li>
+    <li class="l1"><b>Участник</b><span>общение, игры, музыка, опросы</span></li>
   </ol>
 </section>
 
-<!-- 18 ДИАГНОСТИКА -->
-<section class="slide" data-title="Самодиагностика">
-  <h2>Самодиагностика</h2>
+<!-- 19 -->
+<section class="slide" data-title="Если что-то сломалось">
+  <h2>Если что-то <em>сломалось</em></h2>
   <div class="cards c3">
-    <article class="card a-cyan"><h3>Каждые 5 минут</h3><p>Лани проверяет базу и голос; одна и та же ошибка повторяется — пишет владельцу.</p></article>
-    <article class="card a-violet"><h3>Фоновые задачи</h3><p>Упавшая задача перезапускается с растущей паузой, не больше 5 раз в час — потом сообщение владельцу.</p></article>
-    <article class="card a-pink"><h3>Голос</h3><p>Переподключение с паузами 2 → 4 → 8… до 30 мин; после 3 неудач — личное сообщение.</p></article>
-    <article class="card a-cyan"><h3>/owner diagnostics</h3><p>База, ИИ, голос, Figma, задачи, задержки голоса по этапам — без секретов.</p></article>
-    <article class="card a-violet"><h3>«Лани, что случилось?»</h3><p>Короткая честная сводка для всех, без ИИ.</p></article>
-    <article class="card a-pink"><h3>Сторож-агент</h3><p>Снаружи, раз в 30 минут: жива ли Лани. Пишет в Telegram только при поломке и починке.</p></article>
+    <article class="card a-cyan"><h3>Проверяет себя</h3><p>Каждые 5 минут смотрит, всё ли в порядке.</p></article>
+    <article class="card a-violet"><h3>Чинится сама</h3><p>Упавшую часть перезапускает, но без бесконечных попыток.</p></article>
+    <article class="card a-pink"><h3>Пишет владельцу</h3><p>Если проблема повторяется — сообщает в личку.</p></article>
+    <article class="card a-cyan"><h3>Возвращается в звонок</h3><p>Если её выкинуло — заходит снова, с паузами.</p></article>
+    <article class="card a-violet"><h3>«Лани, что случилось?»</h3><p>Расскажет, всё ли с ней в порядке.</p></article>
+    <article class="card a-pink"><h3>Сторож</h3><p>Отдельно следит за Лани и пишет в Telegram, если она упала.</p></article>
   </div>
 </section>
 
-<!-- 19 ПРОИЗВОДИТЕЛЬНОСТЬ -->
+<!-- 20 -->
 <section class="slide split" data-title="Скорость">
   <div>
-    <h2>Скорость <em>голоса</em></h2>
-    <p class="lead">Узкие места: распознавание, первый токен ИИ, первый звук синтеза.</p>
+    <h2>Как быстро <em>отвечает</em></h2>
+    <p class="lead">Дольше всего — пока нейросеть придумывает первое слово.</p>
   </div>
   <div class="glass pad">
-    <h3>Реальный замер · 23.10.2026</h3>
-    <div class="meter"><span>первое слово ИИ, без «размышлений»</span><b>0,75–0,94 с</b><i style="--w:45%"></i></div>
-    <div class="meter dim"><span>то же с «размышлениями»</span><b>1,05–1,83 с</b><i style="--w:90%"></i></div>
-    <p class="note">DeepSeek deepseek-flash, голосовой модуль на ПК владельца. Общая задержка теперь копится в /owner diagnostics после реальных разговоров.</p>
+    <h3>Замерили 23 октября</h3>
+    <div class="meter"><span>первое слово ответа сейчас</span><b>0,75–0,94 с</b><i style="--w:45%"></i></div>
+    <div class="meter dim"><span>как было раньше</span><b>1,05–1,83 с</b><i style="--w:90%"></i></div>
+    <p class="note">Это время в голосе, пока нейросеть начинает отвечать. Общее время копится в отчёте владельца.</p>
   </div>
 </section>
 
-<!-- 20 ХРАНИЛИЩЕ -->
-<section class="slide" data-title="Хранилище">
-  <h2>Где живут <em>данные</em></h2>
-  <div class="cards c4">
-    <article class="card a-cyan"><h3>Память</h3><p>то, что попросили запомнить, с датой</p></article>
-    <article class="card a-violet"><h3>Сервер</h3><p>ранги, защита, стиль, настроение, помощник — по ID сервера</p></article>
-    <article class="card a-pink"><h3>Расписание</h3><p>напоминания, дни рождения, отметки «уже напомнила»</p></article>
-    <article class="card a-cyan"><h3>Тех. состояние</h3><p>отметки «жива», сводка голоса, журнал аудита (200 записей)</p></article>
-  </div>
-  <p class="note">Neon Postgres — одна база для сервера и ПК. Токены и ключи в базе не хранятся — только в настройках хостинга.</p>
-</section>
-
-<!-- 21 БЕЗОПАСНОСТЬ -->
+<!-- 21 -->
 <section class="slide split" data-title="Безопасность">
   <div>
     <h2>Безопасность</h2>
-    <p class="lead">Секреты не видит никто — даже владелец в диагностике.</p>
+    <p class="lead">Пароли и ключи не видит никто — даже владелец.</p>
   </div>
   <ul class="ticks big">
-    <li>ключи и токены — только в .env и настройках хостинга</li>
-    <li>ответы ИИ чистятся от IP, токенов и ключей</li>
-    <li>«дай свой айпи / токен» — отказ без запроса к ИИ</li>
-    <li>названия ролей и ники для ИИ — данные, не инструкции</li>
-    <li>TEST_MODE и «сухой прогон» наказаний для проверки</li>
-    <li>журнал критических изменений</li>
+    <li>ключи хранятся отдельно от кода</li>
+    <li>на «дай свой айпи» Лани просто откажет</li>
+    <li>ник или название роли не заставят её что-то сделать</li>
+    <li>наказания можно сначала проверить «понарошку»</li>
+    <li>важные изменения записываются в журнал</li>
   </ul>
 </section>
 
-<!-- 22 24/7 -->
-<section class="slide" data-title="24/7">
-  <h2>Работа <em>24/7</em></h2>
+<!-- 22 -->
+<section class="slide" data-title="Работает всегда">
+  <h2>Работает <em>всегда?</em></h2>
   <div class="split2">
-    <div class="glass pad"><h3>Уже без ПК <span class="tag t-ok">работает</span></h3><p>Чат, ИИ, игры, музыка на сервере, защита, ранги, напоминания, контент дня — на Render, база в Neon.</p></div>
-    <div class="glass pad"><h3>Пока на ПК <span class="tag t-part">частично</span></h3><p>Голос в звонке: модели распознавания речи требуют больше памяти, чем даёт бесплатный хостинг. Выключен ПК — голоса нет, остальное работает.</p></div>
+    <div class="glass pad"><h3>Да <span class="tag t-ok">24/7</span></h3><p>Чат, игры, музыка, защита, напоминания — работают на сервере круглосуточно.</p></div>
+    <div class="glass pad"><h3>Пока нет <span class="tag t-part">с компьютером</span></h3><p>Голос в звонке работает, когда включён компьютер владельца. Бесплатному серверу не хватает памяти, чтобы разбирать речь.</p></div>
   </div>
-  <p class="note">Вариант на будущее — бесплатная облачная VM с большим объёмом памяти (нужна регистрация владельцем). Инструкция — в DEPLOY.md.</p>
+  <p class="note">Можно перенести голос на бесплатный облачный компьютер — инструкция уже готова.</p>
 </section>
 
-<!-- 23 ГОТОВО -->
+<!-- 23 -->
 <section class="slide" data-title="Что готово">
-  <h2>Что <em>реализовано</em></h2>
+  <h2>Что уже <em>готово</em></h2>
   <div class="status">
-    <div><span>Разговор с ИИ, правило активации</span><em class="tag t-ok">работает</em></div>
+    <div><span>Общение в чате</span><em class="tag t-ok">работает</em></div>
     <div><span>Голос в звонке</span><em class="tag t-part">когда включён ПК</em></div>
     <div><span>Музыка и плейлисты</span><em class="tag t-ok">работает</em></div>
-    <div><span>Мафия, викторины, мини-игры</span><em class="tag t-ok">работает</em></div>
-    <div><span>Автомодерация и ранги</span><em class="tag t-ok">работает</em></div>
-    <div><span>Память, напоминания, опросы</span><em class="tag t-ok">работает</em></div>
-    <div><span>Стиль общения фразами</span><em class="tag t-check">требует проверки в Discord</em></div>
-    <div><span>Роли через права Discord</span><em class="tag t-check">требует проверки в Discord</em></div>
-    <div><span>Панель владельца /owner</span><em class="tag t-ok">работает</em></div>
+    <div><span>Игры и мини-игры</span><em class="tag t-ok">работает</em></div>
+    <div><span>Защита сервера и права</span><em class="tag t-ok">работает</em></div>
+    <div><span>Память, напоминания</span><em class="tag t-ok">работает</em></div>
+    <div><span>Новый спокойный характер</span><em class="tag t-check">проверяем в Discord</em></div>
+    <div><span>Команды в звонке для всех</span><em class="tag t-check">проверяем в Discord</em></div>
+    <div><span>Отчёты для владельца</span><em class="tag t-ok">работает</em></div>
   </div>
-  <p class="note">«Работает» — проверено тестами и в Discord раньше; свежие функции отмечены честно.</p>
 </section>
 
-<!-- 24 УЛУЧШАЕМ -->
-<section class="slide" data-title="Что улучшаем">
-  <h2>Что улучшаем <em>сейчас</em></h2>
+<!-- 24 -->
+<section class="slide" data-title="Над чем работаем">
+  <h2>Над чем <em>работаем</em></h2>
   <div class="cards c3">
-    <article class="card a-cyan"><h3>Задержка голоса</h3><p>Копим замеры по этапам и смотрим, где теряется время.</p></article>
-    <article class="card a-violet"><h3>Голос без ПК</h3><p>Перенос голосового модуля на облачную машину.</p></article>
-    <article class="card a-pink"><h3>Проверка в Discord</h3><p>Стиль общения и роли — живая проверка на сервере.</p></article>
+    <article class="card a-cyan"><h3>Быстрее голос</h3><p>Смотрим, где теряется время, и ускоряем.</p></article>
+    <article class="card a-violet"><h3>Голос без компьютера</h3><p>Переносим на облачный компьютер.</p></article>
+    <article class="card a-pink"><h3>Проверка вживую</h3><p>Тестируем новые функции на сервере.</p></article>
   </div>
-  <p class="note">Это текущие задачи, а не готовые функции.</p>
 </section>
 
-<!-- 25 ДОРОЖНАЯ КАРТА -->
-<section class="slide" data-title="Дорожная карта">
-  <h2>Дорожная <em>карта</em></h2>
+<!-- 25 -->
+<section class="slide" data-title="Планы">
+  <h2>Что <em>дальше</em></h2>
   <ol class="road">
-    <li class="done"><b>Основа</b><span>чат, ИИ, игры, музыка</span></li>
-    <li class="done"><b>Защита</b><span>автомодерация, ранги, права</span></li>
-    <li class="done"><b>Надёжность</b><span>диагностика, сторож, предохранители</span></li>
-    <li class="now"><b>Голос</b><span>скорость, облако</span></li>
-    <li><b>Идеи</b><span>звуковая панель, сезонные события, панель настроек</span></li>
+    <li class="done"><b>Основа</b><span>чат, игры, музыка</span></li>
+    <li class="done"><b>Порядок</b><span>защита и права</span></li>
+    <li class="done"><b>Надёжность</b><span>проверки и сторож</span></li>
+    <li class="now"><b>Голос</b><span>быстрее и без ПК</span></li>
+    <li><b>Идеи</b><span>звуки, события, удобные настройки</span></li>
   </ol>
-  <p class="note">Без дат: делаем, проверяем, двигаемся дальше.</p>
+  <p class="note">Без сроков: делаем по шагам.</p>
 </section>
 
-<!-- 26 ВЫЗОВЫ -->
-<section class="slide" data-title="Вызовы">
-  <h2>Главные <em>вызовы</em></h2>
+<!-- 26 -->
+<section class="slide" data-title="Что было сложно">
+  <h2>Что было <em>сложно</em></h2>
   <div class="cards c3">
-    <article class="card a-pink"><h3>Распознавание речи</h3><p>Слабый микрофон и шум — поэтому два движка: Vosk ловит имя, Whisper уточняет.</p></article>
-    <article class="card a-violet"><h3>Два процесса</h3><p>Сервер и ПК работают с одной базой — настройки нужно синхронизировать без затирания.</p></article>
-    <article class="card a-cyan"><h3>Права Discord</h3><p>Ранг Лани не даёт боту прав, которых нет; иерархия ролей решает всё.</p></article>
+    <article class="card a-pink"><h3>Разобрать речь</h3><p>Микрофоны разные и шумят — поэтому Лани слушает в два прохода.</p></article>
+    <article class="card a-violet"><h3>Две части</h3><p>Сервер и компьютер должны не мешать друг другу.</p></article>
+    <article class="card a-cyan"><h3>Права Discord</h3><p>Лани не может больше, чем ей разрешил сервер.</p></article>
   </div>
 </section>
 
-<!-- 27 ИТОГ -->
+<!-- 27 -->
 <section class="slide cover final" data-title="Итог">
   <div class="orb small" aria-hidden="true"><i></i><i></i><i></i><span></span></div>
   <div class="cover-text">
     <h2 class="mega">LANI</h2>
-    <p class="lead">Лани — это не просто бот с командами. Это развивающийся проект, в котором голос, интеллект и автоматизация объединяются в одном Discord-пространстве.</p>
-    <p class="sub">Создаём. Проверяем. Улучшаем. Двигаемся дальше.</p>
+    <p class="lead">Удобный бот, с которым приятно общаться, играть и слушать музыку.</p>
+    <p class="sub">Делаем. Проверяем. Улучшаем.</p>
     <div class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
   </div>
 </section>

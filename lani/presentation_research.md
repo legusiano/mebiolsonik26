@@ -6,7 +6,7 @@
 - 31 модуль Python, ≈ 11 600 строк (`*.py` в корне).
 - 95 slash-команд — собраны автоматически из декораторов `@tree.command` / `@group.command` (см. `commands.js`).
 - 20 фраз, которые Лани понимает в чате и голосом — из `quick.py`, `voice_cmds.py`, `style.py`.
-- Тесты: 22 файла, **564 passed, 1 skipped** (запуск `.venv/Scripts/python -m pytest -q` 24.10.2026).
+- Тесты: **580 passed, 2 skipped** (запуск `.venv/Scripts/python -m pytest -q` 24.10.2026).
 
 ## Архитектура (подтверждено)
 - `bot.py` на Render (через `lani_runner.py` в репозитории dz_bot): чат, ИИ, игры, музыка, автомодерация, ранги, напоминания, контент дня, `/owner`.

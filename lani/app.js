@@ -88,8 +88,8 @@
 
   /* ---------- каталог команд ---------- */
   var CMDS = window.LANI_COMMANDS || [];
-  var COLORS = { "Основные": "#00F5FF", "Голос и музыка": "#8B5CFF", "AI и диалог": "#FF3CAC", "Игры": "#3dffa8", "Настройки": "#ffd166",
-    "Модерация": "#ff7a59", "Администрирование": "#c39bff", "Владелец бота": "#FF3CAC", "Диагностика": "#00F5FF", "Служебные": "#AAB2C8" };
+  var COLORS = { "Основные": "#A78BFA", "Голос и музыка": "#C4B5FD", "AI и диалог": "#F0ABFC", "Игры": "#86EFAC", "Настройки": "#FCD34D",
+    "Модерация": "#FDA4AF", "Администрирование": "#DDD6FE", "Владелец бота": "#F0ABFC", "Диагностика": "#A78BFA", "Служебные": "#A9A2BC" };
   var cats = Object.keys(COLORS).filter(function (c) { return CMDS.some(function (x) { return x.cat === c; }); });
   var filter = "Все", query = "";
   cats.forEach(function (c) {
@@ -117,7 +117,7 @@
         (!query || (x.name + " " + x.desc + " " + x.cat).toLowerCase().indexOf(query) >= 0);
     });
     list.forEach(function (x) {
-      var c = el("article", "cmd"); c.style.borderLeft = "3px solid " + (COLORS[x.cat] || "#00F5FF");
+      var c = el("article", "cmd"); c.style.borderLeft = "3px solid " + (COLORS[x.cat] || "#A78BFA");
       c.appendChild(el("code", null, x.syntax));
       c.appendChild(el("p", null, x.desc));
       var m = el("div", "meta");
