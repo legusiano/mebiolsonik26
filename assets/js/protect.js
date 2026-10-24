@@ -28,7 +28,7 @@
     if (window.__allowCopy || editable(e.target)) return;
     var sel = String(window.getSelection ? window.getSelection() : "");
     if (!sel || !e.clipboardData) return;
-    e.clipboardData.setData("text/plain", sel.slice(0, 300) + "\n\n© mebiolsonik26 — " + ORIGIN);
+    e.clipboardData.setData("text/plain", sel.slice(0, 300) + "\n\n© mebioslonik26 — " + ORIGIN);
     e.preventDefault();
   });
 
@@ -44,7 +44,7 @@
   }
 
   try {
-    console.log("%cmebiolsonik26", "font:800 28px sans-serif;color:#3ee6c4");
+    console.log("%cmebioslonik26", "font:800 28px sans-serif;color:#3ee6c4");
     console.log("Нравится сайт? Закажи такой же: https://t.me/ZloOi72 — копировать чужой не надо :)");
   } catch (e) { /* нет консоли */ }
 })();

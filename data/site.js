@@ -1,8 +1,8 @@
 /* Основное содержимое сайта. Меняй текст здесь — HTML трогать не нужно.
    Пустая ссылка ("") = кнопка не показывается. Подробно: README.md. */
 window.SITE = {
-  name: "mebiolsonik26",
-  heroTitle: "ME BIOLSONIK26",
+  name: "mebioslonik26",
+  heroTitle: "ME BIOSLONIK26",
   heroSubtitle: "Разработка. Автоматизация. Цифровые проекты.",
   heroText: "Создаю Discord-ботов на заказ, автоматизирую задачи и разрабатываю собственные цифровые проекты. Здесь собраны мои работы, эксперименты и способы связи.",
   typing: ["Building something cool...", "Пишу нового бота...", "Автоматизирую рутину..."],
@@ -28,7 +28,6 @@ window.SITE = {
   telegram: { handle: "@ZloOi72", url: "https://t.me/ZloOi72" },
   links: [
     { label: "Telegram-канал", url: "https://t.me/Claudeuser26" },
-    { label: "TikTok", url: "https://www.tiktok.com/@dedusamaral" },
     { label: "YouTube", url: "" },
     { label: "GitHub", url: "" },
     { label: "Discord", url: "" },

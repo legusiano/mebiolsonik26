@@ -46,7 +46,7 @@ window.PROJECTS = [
     image: "", url: ""
   },
   {
-    title: "Сайт mebiolsonik26",
+    title: "Сайт mebioslonik26",
     category: "web",
     status: "Работает",
     description: "Этот сайт: портфолио, услуги и плеер NORTH MUSIC в северной стилистике.",

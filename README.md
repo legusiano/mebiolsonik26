@@ -1,4 +1,4 @@
-# mebiolsonik26 — сайт-портфолио
+# mebioslonik26 — сайт-портфолио
 
 Статический сайт на HTML, CSS и JavaScript без сборки, без сервера и без зависимостей. Внешнее подключается только в двух случаях:
 - шрифты Google Fonts;
@@ -129,11 +129,11 @@ YouTube не используется. Играют **официальные 30-
 
 Адрес: **https://legusiano.github.io/mebiolsonik26/**
 
-Адрес `mebiolsonik26.github.io` возможен только у аккаунта GitHub с именем `mebiolsonik26`. Если когда-нибудь заведёте такой аккаунт, перенесите туда репозиторий под именем `mebiolsonik26.github.io`. В `404.html` и метатегах `index.html` тогда поменяйте пути `/mebiolsonik26/` на `/`.
+Адрес `mebiolsonik26.github.io` возможен только у аккаунта GitHub с именем `mebioslonik26`. Если когда-нибудь заведёте такой аккаунт, перенесите туда репозиторий под именем `mebiolsonik26.github.io`. В `404.html` и метатегах `index.html` тогда поменяйте пути `/mebiolsonik26/` на `/`.
 
 Альтернативы на будущее:
-- **Cloudflare Pages** — адрес `mebiolsonik26.pages.dev`, если имя свободно; нужен аккаунт Cloudflare.
-- **Vercel** — `mebiolsonik26.vercel.app`; нужен аккаунт.
+- **Cloudflare Pages** — адрес `mebioslonik26.pages.dev`, если имя свободно; нужен аккаунт Cloudflare.
+- **Vercel** — `mebioslonik26.vercel.app`; нужен аккаунт.
 
 Сайту не нужна никакая настройка: подойдёт любой статический хостинг.
 
